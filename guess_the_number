@@ -1,0 +1,18 @@
+$hello "угадай три числа"
+$result "ну вот что получилось"
+$good "угадал"
+$bad "не угадал"
+$magic_n 42
+
+main = out (somefunc (inp (write (hello) (n1))) (sum (inp (n2)) (magic_n)))
+
+$n1 "введите число a: "
+$n2 "введите число b: "
+$n3 "введите число c: "
+
+inp x = read (x)
+h x = if (x) (good) (bad)
+somefunc x y = write (result) (h (eq (sum (x) (y)) (inp (n3))))
+нраавица = inp ("понравилась игра? (1=да)")
+konec = write (if (eq (1) (нраавица)) ("замечательно") ("очень жаль")) (0)
+out a = eq (write (a) (0)) (konec)
